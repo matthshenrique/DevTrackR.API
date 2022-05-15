@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevTrackR.API</name>
+    </assembly>
+    <members>
+        <member name="M:DevTrackR.API.Controllers.PackagesController.GetAll">
+            <summary>
+            Obter todos os pacotes.
+            </summary> 
+            <response code="200">OK</response>
+        </member>
+        <member name="M:DevTrackR.API.Controllers.PackagesController.GetByCode(System.String)">
+            <summary>
+            Obter pacote por código.
+            </summary> 
+            <param name="model">Código do pacote</param>
+            <returns>Objeto encontrado</returns>
+            <response code="200">OK</response>
+            <response code="404">Pacote não encontrado</response>
+        </member>
+        <member name="M:DevTrackR.API.Controllers.PackagesController.Post(DevTrackR.API.Models.AddPackageInputModel)">
+             <summary>
+             Cadastro de um pacote.
+             </summary>
+             <remarks>  
+            {
+              "title": "Pacote com Coleção de selos",
+              "weight": 4
+            }
+             </remarks>  
+             <param name="model">Dados do pacote</param>
+             <returns>Objeto recém-criado</returns>
+             <response code="201">Cadastro realizado com sucesso</response>
+             <response code="400">Dados inválidos</response>
+        </member>
+        <member name="M:DevTrackR.API.Controllers.PackagesController.PostUpdate(System.String,DevTrackR.API.Models.AddPackageUpdateInputModel)">
+             <summary>
+             Atualização do status de um pacote.
+             </summary>
+             <remarks>  
+            {
+              "status": "Pacote saiu para entrega",
+              "delivered": false
+            }
+             </remarks>  
+             <param name="code">Código do pacote</param> 
+             <param name="model">Dados do pacote</param>
+             <returns>Objeto atualizado</returns>
+             <response code="204">Atualização realizada com sucesso</response>
+             <response code="400">Dados inválidos</response>
+        </member>
+    </members>
+</doc>
